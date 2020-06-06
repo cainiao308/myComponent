@@ -46,6 +46,7 @@ const Button:React.FC<ButtonProps> = (props) =>{
             'disabled': (btnType === ButtonType.Link) && disabled
         }
     )
+    
     if (btnType === ButtonType.Link && href){
         return (
             <a href={href} className={classes} {...restProps}>{children}</a>
