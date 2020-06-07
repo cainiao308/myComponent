@@ -1,0 +1,25 @@
+.tab{
+    list-style: none;
+    display: flex;
+    flex-wrap: nowrap;
+    border-bottom: $menu-border-width solid $menu-border-color;
+    .tab-item{
+        padding:$menu-item-padding-y $menu-item-padding-x;
+        cursor: pointer;
+        transition: color .15s ease-in-out;
+        &.is-active {
+            color: $menu-item-active-color;
+            border-bottom: $menu-item-active-border-width solid $menu-item-active-color
+        }
+        &:hover{
+            color: $menu-item-active-color;
+        }
+        &.is-disabled{
+            cursor: not-allowed;
+            color: #6c757d;
+        }
+    }
+    
+}
+
+

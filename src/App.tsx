@@ -6,6 +6,8 @@ import Alert , {AlertType} from './components/Alert/Alert'
 import Menu from './components/Menu/Menu'
 import MenuItem from './components/Menu/MenuItem'
 import SubMenu from './components/Menu/SubMenu'
+import Tab from './components/Tabs/Tabs'
+import TabItem from './components/Tabs/TabItem'
 
 function App() {
   return (
@@ -27,6 +29,12 @@ function App() {
       <Button  href="https://www.baidu.com" btnType={ButtonType.Link}>Baidu Link</Button>
       <Button  disabled href="https://www.baidu.com" btnType={ButtonType.Link}>Disable Link</Button>
       <Alert type={AlertType.Default}  message="警告" closable title="hahahaha" onClose={(e)=>{}}/>
+      <hr/>
+      <Tab defaultIndex={2} onSelect={(n)=>{console.log(n)}}>
+        <TabItem label="选项卡1" index={0} >this is card 1</TabItem>
+        <TabItem label="选项卡2" index={1} disabled>this is card 2</TabItem>
+        <TabItem label="选项卡3" index={2}>this is card 3</TabItem>
+      </Tab>
       </header>
     </div>
   );

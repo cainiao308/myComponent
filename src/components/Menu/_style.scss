@@ -16,8 +16,13 @@
 
         &.is-disabled{
             color: $menu-item-disabled-color;
-            pointer-events: none;
-            cursor: default;
+            // pointer-events: none;
+            border-bottom:0px !important;
+            cursor:not-allowed;
+            &:hover{
+                color: #6c757d;
+                border-bottom: 0px !important;
+            }
         }
         &.is-active , &:hover{
             color: $menu-item-active-color;
@@ -69,10 +74,16 @@
       position: absolute;
       background: $white;
       z-index: 100;
-      top: calc(100% + 8px);
+      top: calc(100% );
       left: 0;
       border: $menu-border-width solid $menu-border-color;
       box-shadow: $submenu-box-shadow;
+    }
+    .submenu-item{
+        border-bottom: 2px;
+        &:hover{
+            border-bottom: 2px;
+        }
     }
     .cainiao-submenu.menu-opened{
         display: block;
