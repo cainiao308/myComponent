@@ -8,12 +8,16 @@ import MenuItem from './components/Menu/MenuItem'
 import SubMenu from './components/Menu/SubMenu'
 import Tab from './components/Tabs/Tabs'
 import TabItem from './components/Tabs/TabItem'
+import { library } from '@fortawesome/fontawesome-svg-core'
+import { fas } from '@fortawesome/free-solid-svg-icons'
+import Icon from './components/Icon/icon'
+library.add(fas)
 
 function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <Menu defaultIndex="0"  onSelect={(n)=>{console.log(n)}}> 
+        <Menu defaultIndex="0"  mode="vertical" onSelect={(n)=>{console.log(n)}}> 
             <MenuItem >cool link</MenuItem> 
             <MenuItem  disabled>cool link 2</MenuItem>
             <SubMenu title="sub">
@@ -31,10 +35,11 @@ function App() {
       <Alert type={AlertType.Default}  message="警告" closable title="hahahaha" onClose={(e)=>{}}/>
       <hr/>
       <Tab defaultIndex={2} onSelect={(n)=>{console.log(n)}}>
-        <TabItem label="选项卡1" index={0} >this is card 1</TabItem>
+        <TabItem label="选项卡1" index={0} ><Button disabled>Disable Button</Button></TabItem>
         <TabItem label="选项卡2" index={1} disabled>this is card 2</TabItem>
-        <TabItem label="选项卡3" index={2}>this is card 3</TabItem>
+        <TabItem label="选项卡3" index={2}><Alert type={AlertType.Default}  message="警告" closable title="hahahaha" onClose={(e)=>{}}/></TabItem>
       </Tab>
+      <Icon icon="coffee" theme="danger"/>
       </header>
     </div>
   );

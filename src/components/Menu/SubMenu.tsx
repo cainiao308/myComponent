@@ -2,6 +2,7 @@ import React, { useContext ,useState } from 'react'
 import classNames from 'classnames'
 import {MenuContext} from './Menu'
 import  {MenuItemProps} from './MenuItem'
+import Icon from '../Icon/icon'
 
 interface SubMenuProps {
     index?:string,
@@ -14,7 +15,9 @@ const SubMenu:React.FC<SubMenuProps> = ({index , title , className , children}) 
     const [open , setOpen] = useState(false)
     const context = useContext(MenuContext)
     const classes = classNames('menu-item submenu-item' , className ,{
-        'is-active': context.index === index
+        'is-active': context.index === index,
+        'is-open':open,
+        'is-vertical':context.mode === 'vertical'
     })
 
     const handleClick = (e:React.MouseEvent)=>{
@@ -38,7 +41,8 @@ const SubMenu:React.FC<SubMenuProps> = ({index , title , className , children}) 
 
     const renderChildren = ()=>{
         const subMenuClassed = classNames('cainiao-submenu' , {
-            'menu-opened':open
+            'menu-opened':open,
+           
         })
         const childrenComponent = React.Children.map(children , (child  , i ) =>{
             const childElement = child as React.FunctionComponentElement<MenuItemProps>
@@ -60,6 +64,7 @@ const SubMenu:React.FC<SubMenuProps> = ({index , title , className , children}) 
         <li key={index} className={classes} {...hoverEvents}>
             <div className="submenu-title" {...clickEvents}>
                 {title}
+                <Icon icon="angle-down" className="arrow-icon"/>
             </div>
             {renderChildren()}
         </li>

@@ -8,7 +8,7 @@ export interface TabItemProps {
     className?:string,
     style?:React.CSSProperties,
     index:number,
-    children:string
+    children:React.ReactNode
 }
 
 const Tabs:React.FC<TabItemProps> = ({children , disabled  , label , className , style , index}) =>{
@@ -21,7 +21,7 @@ const Tabs:React.FC<TabItemProps> = ({children , disabled  , label , className ,
     const handleClick = ()=>{
         if(context.onSelect && !disabled){
             context.onSelect(index)
-            console.log(children)
+            //console.log(children)
         }   
     }
 

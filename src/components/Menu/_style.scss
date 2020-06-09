@@ -18,6 +18,7 @@
             color: $menu-item-disabled-color;
             // pointer-events: none;
             border-bottom:0px !important;
+            border-left: 0px !important;
             cursor:not-allowed;
             &:hover{
                 color: #6c757d;
@@ -35,10 +36,26 @@
           display: flex;
           align-items: center;
         }
+        .arrow-icon{
+            transition: transform .25s ease-in-out;
+            margin-left: 3px;
+        }
         &:hover {
             .arrow-icon {
               transform: rotate(180deg);
             }
+        }
+    }
+    .is-vertical{
+        &:hover{
+            .arrow-icon{
+                transform: rotate(0deg);
+            }
+        }
+    }
+    .is-vertical.is-open{
+        .arrow-icon{
+            transform: rotate(180deg);
         }
     }
 }
