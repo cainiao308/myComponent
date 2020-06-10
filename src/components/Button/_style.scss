@@ -23,6 +23,9 @@
         }
 
     }
+    &:hover{
+        border: 0.5px solid $primary;
+    }
 }
 
 .btn-lg {

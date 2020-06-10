@@ -1,6 +1,6 @@
-import React, { createContext  , useState} from 'react'
+import React from 'react'
 import classNames from 'classnames'
-import { FontAwesomeIcon , FontAwesomeIconProps} from '@fortawesome/react-fontawesome'
+import { FontAwesomeIcon , FontAwesomeIconProps } from '@fortawesome/react-fontawesome'
 
 export type ThemeProps = 'primary' | 'secondary' | 'sucess' | 'info' | 'warning' |'danger' | 'light' | 'dark'
 
@@ -9,7 +9,7 @@ export interface IconProps extends FontAwesomeIconProps  {
 
 }
 
-const Icon: React.FC<FontAwesomeIconProps> = (props) =>{
+const Icon: React.FC<IconProps> = (props) =>{
     const {theme , className , ...restProps} = props
 
     const classes = classNames('cainiao-icon' , className , {

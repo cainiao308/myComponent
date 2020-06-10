@@ -11,7 +11,9 @@ import TabItem from './components/Tabs/TabItem'
 import { library } from '@fortawesome/fontawesome-svg-core'
 import { fas } from '@fortawesome/free-solid-svg-icons'
 import Icon from './components/Icon/icon'
+import Input from './components/Input/input'
 library.add(fas)
+
 
 function App() {
   return (
@@ -32,7 +34,7 @@ function App() {
       <Button btnType={ButtonType.Danger} size={ButtonSize.Small}>Small Danger</Button>
       <Button  href="https://www.baidu.com" btnType={ButtonType.Link}>Baidu Link</Button>
       <Button  disabled href="https://www.baidu.com" btnType={ButtonType.Link}>Disable Link</Button>
-      <Alert type={AlertType.Default}  message="警告" closable title="hahahaha" onClose={(e)=>{}}/>
+      <Alert type={AlertType.Default}  message="警告" closable  onClose={(e)=>{}}/>
       <hr/>
       <Tab defaultIndex={2} onSelect={(n)=>{console.log(n)}}>
         <TabItem label="选项卡1" index={0} ><Button disabled>Disable Button</Button></TabItem>
@@ -40,6 +42,7 @@ function App() {
         <TabItem label="选项卡3" index={2}><Alert type={AlertType.Default}  message="警告" closable title="hahahaha" onClose={(e)=>{}}/></TabItem>
       </Tab>
       <Icon icon="coffee" theme="danger"/>
+      <Input placeholder="aaaaaaaaa" defaultValue="hehehe" onChange={(e)=>{console.log(e.target.value)}} prepend="https://"/>
       </header>
     </div>
   );

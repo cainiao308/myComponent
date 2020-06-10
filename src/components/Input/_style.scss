@@ -1,0 +1,57 @@
+.cainiao-input.append{
+    display: flex;
+    .input-inner{
+        border-radius: 0.25rem;
+        border: 1px solid #ced4da;
+        border-top-right-radius: 0;
+        border-bottom-right-radius: 0;
+        padding: 0.375rem 0.75rem;
+    }
+    .input-append{
+        display: flex;
+        align-items: center;
+        padding: 0.375rem 0.75rem;
+        margin-bottom: 0;
+        font-size: 1rem;
+        font-weight: 400;
+        line-height: 1.5;
+        color: #495057;
+        text-align: center;
+        white-space: nowrap;
+        background-color: #e9ecef;
+        border: 1px solid #ced4da;
+        border-radius: 0.25rem;
+        border-top-left-radius:0;
+        border-bottom-left-radius: 0;
+    }
+}
+.cainiao-input.pre{
+    display: flex;
+    .input-pre{
+        display: flex;
+        align-items: center;
+        padding: 0.375rem 0.75rem;
+        margin-bottom: 0;
+        font-size: 1rem;
+        font-weight: 400;
+        line-height: 1.5;
+        color: #495057;
+        text-align: center;
+        white-space: nowrap;
+        background-color: #e9ecef;
+        border: 1px solid #ced4da;
+        border-radius: 0.25rem;
+        border-top-right-radius:0;
+        border-bottom-right-radius: 0;
+    }
+    .input-inner{
+        border-radius: 0.25rem;
+        border: 1px solid #ced4da;
+        border-top-left-radius: 0;
+        border-bottom-left-radius: 0;
+        padding: 0.375rem 0.75rem;
+        &:hover{
+            border: 1px solid $primary;
+        }
+    }
+}

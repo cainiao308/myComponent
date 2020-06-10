@@ -1,5 +1,6 @@
-import React , {useState} from 'react'
+import React , {useState , FC ,MouseEvent} from 'react'
 import classNames from 'classnames'
+import Icon from '../Icon/icon'
 //  <Alert
 //  message="Warning Text Warning Text Warning TextW arning Text Warning Text Warning TextWarning Text"
 //  type="warning"
@@ -8,7 +9,7 @@ import classNames from 'classnames'
 // />
 
 export enum AlertType {
-    Sucess = 'primary',
+    Sucess = 'success',
     Default = 'default',
     Danger = 'danger',
     Warning = 'warning'
@@ -21,13 +22,13 @@ interface BaseAlertProps {
     closable?: boolean;
     type?: AlertType;
     title?: string;
-    onClose:(e:React.MouseEvent)=>void
+    onClose:(e:MouseEvent)=>void
 }
 
 //export type AlertType = 'sucess' | 'danger' | 'default' | 'warning'
 
 
-const Alert: React.FC<BaseAlertProps> = (props) => {
+export const Alert: FC<BaseAlertProps> = (props) => {
     const {
         message,
         closable,
@@ -45,7 +46,7 @@ const Alert: React.FC<BaseAlertProps> = (props) => {
     }
     )
 
-    const handleClick = (e:React.MouseEvent)=>{
+    const handleClick = (e:MouseEvent)=>{
         setVisible(false)
         console.log(visible)
         onClose(e)
@@ -55,13 +56,13 @@ const Alert: React.FC<BaseAlertProps> = (props) => {
             if (title) {
                 return (
                     <div className={classes}>
-                        <h5>{title}<span className="close" onClick={handleClick}>关闭</span></h5>
+                        <h5>{title}<span className="close" onClick={handleClick}><Icon icon="times" /></span></h5>
                         <p>{message}</p>
                     </div>
                 )
             } else {
                 return (
-                    <div className={classes}>{message}<span className="close">关闭</span></div>
+                    <div className={classes}>{message}<span className="close"><Icon icon="times" /></span></div>
                 )
             }
         } else {
@@ -76,4 +77,4 @@ const Alert: React.FC<BaseAlertProps> = (props) => {
 
 }
 
-export default Alert
+export default Alert;
