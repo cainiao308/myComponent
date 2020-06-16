@@ -1,9 +1,9 @@
 import React , { FC  , InputHTMLAttributes} from 'react'
 import classNames from 'classnames'
-import Icon , {IconProps}from '../Icon/icon'
+import  {IconProps}from '../Icon/icon'
 
 
-interface InputProps extends Omit<InputHTMLAttributes<HTMLInputElement> , 'size' >{
+export interface InputProps extends Omit<InputHTMLAttributes<HTMLInputElement> , 'size' >{
     disabled?:boolean,
     size?:string,
     icon?:IconProps,
