@@ -29,15 +29,30 @@ interface GithubUsers {
 }
 
 function App2() {
-  const [inProp, setInProp] = useState(false);
+  const [inProp, setInProp] = useState([{name:"cai",age:20},{name:"li",age:30}]);
   return (
     <div>
-      <CSSTransition in={inProp} timeout={1000} classNames="my-node">
-        <div>
-          {"I'll receive my-node-* classes"}
-        </div>
-      </CSSTransition>
-      <button type="button" onClick={() => setInProp(!inProp)}>
+      {
+        inProp.map(item=>{
+          return (
+            <>
+            <p>{item.name}</p>
+            <p>{item.age}</p>
+            </>
+          )
+       
+        })
+      }
+      <button type="button" onClick={() => setInProp(pre=>{
+        return pre.map(item=>{
+          if(item.age===20){
+            item.age = 100
+            return item
+          }else{
+            return item
+          }
+        })
+      })}>
         Click to Enter
       </button>
     </div>
@@ -92,7 +107,24 @@ function App() {
         }}
       />
       </header>
-      <Upload />
+      <hr/>
+      <Upload 
+        action="http://127.0.0.1:5000/upload" 
+        onProgress={(per)=>{console.log(per)}} 
+        onSucess={(data , file)=>{console.log(data)}}
+        onError = {(err,file)=>{console.log(err)}}
+        // beforeUpload={(file)=>{
+        //   // if(Math.round(file.size /1024)> 50000){
+        //   //   alert('bbb')
+        //   //   return false
+        //   // }else{
+        //   //   return true
+        //   // }
+        //   const newFile = new File([file] , 'test_new_name' , {type:file.type})
+        //   return Promise.resolve(newFile)
+        // }}
+      />
+      
     </div>
   );
 }

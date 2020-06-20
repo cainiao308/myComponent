@@ -1,0 +1,21 @@
+.cainiao-upload{
+    width: 300px;
+    border: 1px solid $primary;
+}
+
+.cainiao-upload-list{
+    list-style: none;
+    padding: 0px;
+    .upload-item{
+        margin-top: 10px;
+        &:hover{
+            background-color: #dddddd;
+            cursor: pointer;
+        }
+        display: flex;
+        justify-content: space-between;
+        .file-error{
+            color: red;
+        }
+    }
+}
