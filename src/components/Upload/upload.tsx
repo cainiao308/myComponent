@@ -148,14 +148,19 @@ const Upload :React.FC<UploadProps> = (props) =>{
        
     }
 
-    //console.log(fileList);
+    const handleRemove = (item:UploadFile)=>{
+        console.log(item)
+        setFileList(fileList.filter(fi =>{
+            return fi.uid !== item.uid
+        }))
+    }
     
 
     return (
         <div className="cainiao-upload">
             <Button btnType={ButtonType.Primary} onClick={handleClick}>Upload</Button>
-            <input type="file" onChange={handleChange} ref={inputRef} style={{display:"none"}}/>
-            <UploadList fileList={fileList}/>
+            <input type="file" onChange={handleChange} ref={inputRef} style={{display:"none"}} accept="image/jpg"/>
+            <UploadList fileList={fileList} removeItem={handleRemove}/>
         </div>
     )
 }

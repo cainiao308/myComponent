@@ -1,21 +1,87 @@
 .cainiao-upload{
     width: 300px;
-    border: 1px solid $primary;
+    button{
+        margin-left: 10px;
+    }
 }
+
+
+// .upload-item:hover .file-actions{
+//     display: inline-block;
+// }
+// .upload-item:hover .file-status{
+//     display: none;
+// }
 
 .cainiao-upload-list{
     list-style: none;
     padding: 0px;
     .upload-item{
-        margin-top: 10px;
+        border-radius: 4px;
+        font-size: 14px;
+        position: relative;
+        margin:10px 10px 0 10px;
         &:hover{
-            background-color: #dddddd;
+            transition: background-color .15s ease-in-out;
+            background-color:#e9ecef;
             cursor: pointer;
+            
         }
-        display: flex;
-        justify-content: space-between;
         .file-error{
             color: red;
+        }
+        &.file-sucess{
+            color: $success;
+        }
+        .file-actions{
+            opacity: 0;
+            position: absolute;
+            right: 0;
+            transition: opacity .2s ease-in-out;
+        }
+
+        .file-alt{
+            margin-right: 5px;
+        }
+
+        .file-status{
+            position: absolute;
+            right: 0;
+        }  
+        &:hover .file-actions {
+            display: inline-block;
+            opacity: 1;
+            color: black;
+        }
+
+        &:hover .file-status{
+            display: none;
+        }
+    }
+    .outer{
+        width: 300px;
+        height: 8px;
+        border-radius: 5px;
+        
+        position: relative;
+        margin: auto;
+        background-color: #dddddd;
+    }
+    .inner{
+        position: absolute;
+        line-height: 10px;
+        top: 0;
+        background-color: $primary;
+        transition: width .3s ease-in-out;
+        height: 100%;
+        border-radius: 5px;
+    }
+    .progess{
+        display: flex;
+        align-items: center;
+        .percent{
+            font-size: 8px;
+            margin-left: 5px;
         }
     }
 }

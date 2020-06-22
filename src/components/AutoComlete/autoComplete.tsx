@@ -141,7 +141,7 @@ const AutoComplete: FC<autocompleteProps> = (props) => {
         <div className="cainiao-autocomplete" ref={componentRef}>
             <Input onChange={handleChange} {...restProps} value={inputvalue} onKeyDown={handleKeyDown}/>
            {
-               loading ? <div className="waiting"><Icon icon="coffee"/></div>:renderItem()
+               loading ? <div className="waiting"><Icon icon="spinner" spin color="#0d6efd" /></div>:renderItem()
            }
         </div>
     )

@@ -12,7 +12,7 @@
         align-items: center;
         min-height: 75px;
         width: 100%;
-        background-color: red;
+        background-color: #ddd;
     }
     .auto-list{
         list-style: none;
@@ -23,6 +23,7 @@
         position: absolute;
         width: 100%;
         z-index: 99;
+        border-radius: 5px;
         li{
             padding: 0.5rem 1rem;
             margin:0;
